@@ -7,7 +7,8 @@
  */
 
 function reassignConst() {
-  // TODO
+  const name = '효진';
+  name = '캠프';
 }
 
 // export 를 수정하지 마세요.
