@@ -13,7 +13,8 @@
  * @returns {any[]} 잘려진 새 배열
  */
 function subArray(arr, start, end) {
-  // TODO
+  const newArr = arr.slice(start, end);
+  return newArr;
 }
 
 // export를 수정하지 마세요.
