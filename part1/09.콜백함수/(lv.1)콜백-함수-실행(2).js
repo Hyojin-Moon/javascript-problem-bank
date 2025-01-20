@@ -11,7 +11,9 @@
  * @returns {number} 최종 콜백 체인 결과
  */
 function chainCallbacks(initialValue, callback1, callback2) {
-  // TODO: 두 콜백을 차례로 호출한 결과값을 반환하세요.
+  const result1 = callback1(initialValue);
+  const result2 = callback2(result1);
+  return result2;
 }
 
 // export를 수정하지 마세요.
