@@ -11,7 +11,13 @@
  */
 
 // TODO: 함수를 작성하세요.
-function getFrequency(arr) {}
+function getFrequency(arr) {
+  let obj = {};
+  arr.forEach((item) => {
+    obj[item] = obj[item] + 1;
+  })
+  return obj;
+}
 
 // export 를 수정하지 마세요.
 export { getFrequency };

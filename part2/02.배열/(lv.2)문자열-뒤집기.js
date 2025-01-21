@@ -9,7 +9,9 @@
  * @returns {string}
  */
 
-function reverseString(str) {}
+function reverseString(str) {
+  return str.reverse() || [];
+}
 
 // export 를 수정하지 마세요.
 export { reverseString };
