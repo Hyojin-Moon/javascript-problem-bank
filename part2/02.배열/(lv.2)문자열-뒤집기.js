@@ -10,7 +10,15 @@
  */
 
 function reverseString(str) {
-  return str.reverse() || [];
+  if(typeof str !== "string"){
+    return "";
+  }
+  let reversed = "";
+  for(let i = str.length-1; i >= 0; i--){
+    reversed += str[i]
+  }
+
+  return reversed;
 }
 
 // export 를 수정하지 마세요.

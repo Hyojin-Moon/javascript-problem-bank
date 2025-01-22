@@ -16,12 +16,25 @@
 let topKeywordsCache = [];
 
 function updateTopKeywords(keywords) {
-  // TODO
+
+  let countKeywords = [];
+
+  keywords.forEach((item) => {
+    let count = false;
+
+    for(let i =0; i < countKeywords.length; i++) {
+      if(countKeywords[i][0] === keywords) {
+        countKeywords[i][1]++;
+        count = true;
+        break;
+      }
+    }
+  }); 
+  return topKeywordsCache;
 }
 
 function getTopKeywords() {
-  // TODO
-  return [];
+  return topKeywordsCache;
 }
 
 // export를 수정하지 마세요.

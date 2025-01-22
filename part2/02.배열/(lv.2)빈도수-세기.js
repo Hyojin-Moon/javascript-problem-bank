@@ -14,8 +14,9 @@
 function getFrequency(arr) {
   let obj = {};
   arr.forEach((item) => {
-    obj[item] = obj[item] + 1;
-  })
+    const key = JSON.stringify(item); // 객체, 배열 등도 문자열로 변환
+    obj[key] = (obj[key] || 0) + 1;
+  });
   return obj;
 }
 
