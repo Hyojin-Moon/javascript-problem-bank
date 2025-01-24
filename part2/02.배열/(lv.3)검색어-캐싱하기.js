@@ -17,20 +17,19 @@ let topKeywordsCache = [];
 
 function updateTopKeywords(keywords) {
 
-  let countKeywords = [];
+  //키워드 빈도 체크 객체, 리듀스
+  const checkedKeywords = {}
+  keywords.forEach((keyword) => {
+    checkedKeywords[keyword] = (checkedKeywords[keyword] || 0) + 1;
+  });
 
-  keywords.forEach((item) => {
-    let count = false;
-
-    for(let i =0; i < countKeywords.length; i++) {
-      if(countKeywords[i][0] === keywords) {
-        countKeywords[i][1]++;
-        count = true;
-        break;
-      }
-    }
-  }); 
-  return topKeywordsCache;
+  //중복 제거 및 정렬
+  const sortedkeywords = Object.keys(checkedKeywords).sort(
+    (a, b) => checkedKeywords[b] - checkedKeywords[a]
+  );
+  
+  //상위 10개만 반환
+  topKeywordsCache = sortedkeywords.slice(0, 10);
 }
 
 function getTopKeywords() {
