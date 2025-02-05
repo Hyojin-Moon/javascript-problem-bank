@@ -19,7 +19,16 @@ const posts = [
   { id: 5, title: "Example" },
 ];
 
-function getPage(pageNumber, perPage) {}
+function getPage(pageNumber, perPage) { //perPage = 보여줄 갯수
+  if (pageNumber < 1) { //  페이지가 1보다 작으면 빈배열
+    return [];
+  }
+  // ex 1, 2
+  const startIdx = (pageNumber - 1) * perPage; // 0
+  const endIdx = startIdx + perPage; // 2
+
+  return posts.slice(startIdx, endIdx);
+}
 
 // export 를 수정하지 마세요.
 export { getPage, posts };
