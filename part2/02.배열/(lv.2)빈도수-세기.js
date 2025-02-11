@@ -12,12 +12,14 @@
 
 // TODO: 함수를 작성하세요.
 function getFrequency(arr) {
-  let obj = {};
-  arr.forEach((item) => {
-    const key = JSON.stringify(item); // 객체, 배열 등도 문자열로 변환
-    obj[key] = (obj[key] || 0) + 1;
+  let map = new Map();
+
+  arr.forEach(item => {
+    let key = typeof item === "object" && item !== null ? JSON.stringify(item) : item ;
+    map.set(key, (map.get(key) || 0) + 1);
   });
-  return obj;
+
+  return Object.fromEntries(map);
 }
 
 // export 를 수정하지 마세요.

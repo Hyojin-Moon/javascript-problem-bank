@@ -31,7 +31,17 @@
  */
 
 //TODO: 2차원 배열을 90도 회전한 새로운 배열을 반환하는 함수를 작성하세요.
-function rotateMatrix(matrix) {}
+function rotateMatrix(matrix) {
+  const n = matrix.length;
+  const result = Array.from({ length: n}, () => Array(n).fill(0)); // 0으로 채워진 n개 행의 배열
+
+  for(let i=0; i<n; i++){
+    for(let j=0; j<n; j++){
+      result[j][n-1-i] = matrix[i][j];
+    }
+  }
+  return result;
+}
 
 // export 를 수정하지 마세요.
 export { rotateMatrix };
