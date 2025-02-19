@@ -15,8 +15,8 @@ import { loginRequest } from "../../part1/10.비동기/(lv.2)로그인-확인-�
 
 async function safeLogin(id, pw) {
   try {
-    const result = await safeLogin(id, pw);
-    result === "ok" ? "ok" : "fail";
+    const result = await loginRequest(id, pw);
+    return result === "ok" ? "ok" : "fail";
   } catch (error) {
     return "error";
   }
